@@ -32,10 +32,18 @@ keymap("n", "<leader>q", ":qa!<CR>", opts)
 --keeps current item in buffer when you past over something
 keymap("x", "<leader>p", [["_dP]], opts)
 
+--see all todo comments
+keymap("n", "<leader>vc", ":TodoTelescope<CR>", opts)
+--see errors
+
+keymap("n", "<leader>ve", ":TroubleToggle<CR>", opts)
+
 --BUFFERS
 --list buffers and switch
-keymap("n", "<leader>bb", ":buffers<CR>:buffer<Space>", opts)
+keymap("n", "<leader>bl", ":b<space>", opts)
 keymap("n", "<leader>bc", ":buffers<CR>:Bclose<Space>", opts)
+keymap("n", "<leader>bp", ":bprevious<CR>", opts)
+keymap("n", "<leader>bn", ":bNext<CR>", opts)
 
 -- go into normal mode
 -- keymap("i", "LL", "<ESC>", opts)
@@ -58,3 +66,16 @@ keymap("n", "<leader>d", ":! pwd<CR>", opts)
 
 --explorer
 keymap("n", "<leader>e", ":Ex<cr>", opts)
+
+--RUST STUFF
+vim.cmd([[
+nmap <F9> <cmd>call vimspector#Launch()<cr>
+nmap <F5> <cmd>call vimspector#StepOver()<cr>
+nmap <F8> <cmd>call vimspector#Reset()<cr>
+nmap <F11> <cmd>call vimspector#StepOver()<cr>")
+nmap <F12> <cmd>call vimspector#StepOut()<cr>")
+nmap <F10> <cmd>call vimspector#StepInto()<cr>")
+]])
+keymap("n", "Db", ":call vimspector#ToggleBreakpoint()<cr>", opts)
+keymap("n", "Dw", ":call vimspector#AddWatch()<cr>", opts)
+keymap("n", "De", ":call vimspector#Evaluate()<cr>", opts)

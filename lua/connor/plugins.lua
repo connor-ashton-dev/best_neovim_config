@@ -64,11 +64,14 @@ return require("packer").startup(function(use)
 	--Completion
 	use({
 		"hrsh7th/nvim-cmp",
-		"hrsh7th/vim-vsnip",
 		"hrsh7th/cmp-nvim-lsp",
 		"L3MON4D3/LuaSnip",
-		"saadparwaiz1/cmp_luasnip",
-		"rafamadriz/friendly-snippets",
+		"hrsh7th/cmp-nvim-lua",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"hrsh7th/cmp-vsnip",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/vim-vsnip",
 	})
 
 	--WINBAR
@@ -96,10 +99,37 @@ return require("packer").startup(function(use)
 	--comments
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	--errors
+	use({
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				icons = false,
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
 	--GIT SIGNS
 	use({
 		"lewis6991/gitsigns.nvim",
 		-- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
 	})
+
+	--RUST STUFF
+	use("puremourning/vimspector")
 end)
