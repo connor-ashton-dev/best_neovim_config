@@ -27,7 +27,9 @@ keymap("n", "N", "Nzzzv", opts)
 --save and format
 keymap("n", "<leader>w", ":w<CR>", opts)
 --mega quit
-keymap("n", "<leader>q", ":qa!<CR>", opts)
+keymap("n", "<leader>Q", ":qa!<CR>", opts)
+--kinda quit
+keymap("n", "<leader>q", ":q!<CR>", opts)
 
 --keeps current item in buffer when you past over something
 keymap("x", "<leader>p", [["_dP]], opts)
@@ -40,8 +42,8 @@ keymap("n", "<leader>ve", ":TroubleToggle<CR>", opts)
 
 --BUFFERS
 --list buffers and switch
-keymap("n", "<leader>bl", ":b<space>", opts)
-keymap("n", "<leader>bc", ":buffers<CR>:Bclose<Space>", opts)
+keymap("n", "<leader>bl", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>bc", ":Bdelete<CR>", opts)
 keymap("n", "<leader>bp", ":bprevious<CR>", opts)
 keymap("n", "<leader>bn", ":bNext<CR>", opts)
 

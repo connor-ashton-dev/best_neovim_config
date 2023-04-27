@@ -1,6 +1,6 @@
 vim.opt.guicursor = ""
 
-vim.cmd.colorscheme("catppuccin")
+--vim.cmd.colorscheme("catppuccin")
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -8,6 +8,8 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+
+vim.opt.fillchars:append({ eob = " " })
 
 vim.opt.smartindent = true
 vim.opt.showmode = false

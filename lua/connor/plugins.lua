@@ -21,15 +21,19 @@ return require("packer").startup(function(use)
 	-- use({
 	-- 	"rose-pine/neovim",
 	-- 	as = "rose-pine",
-	-- 	-- config = function()
-	-- 	-- 	vim.cmd("colorscheme rose-pine")
-	-- 	-- ennd,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme rose-pine")
+	-- 	end,
 	-- })
 
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
 		config = function()
+			require("catppuccin").setup({
+
+				transparent_background = true,
+			})
 			vim.cmd("colorscheme catppuccin")
 		end,
 	})
@@ -45,6 +49,9 @@ return require("packer").startup(function(use)
 		run = ":TSUpdate",
 		requires = { { "JoosepAlviste/nvim-ts-context-commentstring" } },
 	})
+
+	--CLOSE BUFFERS
+	use("moll/vim-bbye")
 
 	--HARPOON
 	use("ThePrimeagen/harpoon")
