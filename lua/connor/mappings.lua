@@ -19,6 +19,9 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 
+--remove highlight with ESC
+keymap("n", "<ESC>", ":nohl<CR>", opts)
+
 -- grepping
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
@@ -66,7 +69,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<leader>d", ":! pwd<CR>", opts)
 
 --explorer
-keymap("n", "<leader>e", ":Ex<cr>", opts)
+keymap("n", "<leader>e", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", opts)
 
 --RUST STUFF
 vim.cmd([[
@@ -91,6 +94,6 @@ vim.keymap.set("n", "<leader>fr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>vk", builtin.keymaps, opts)
 vim.keymap.set("n", "<leader>vv", builtin.treesitter, opts)
 vim.keymap.set("n", "<leader>sc", builtin.spell_suggest, opts)
-vim.keymap.set("n", "<leader>ch", builtin.command_history, opts)
+vim.keymap.set("n", "<leader>vh", builtin.command_history, opts)
 vim.keymap.set("n", "<leader>of", builtin.oldfiles, opts)
 vim.keymap.set("n", "<leader>vo", builtin.vim_options, opts)
