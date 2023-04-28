@@ -1,2 +1,2 @@
-require('connor.remap')
-require('connor.plugins')
+require("connor.mappings")
+require("connor.plugins")
