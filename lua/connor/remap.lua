@@ -42,7 +42,6 @@ keymap("n", "<leader>ve", ":TroubleToggle<CR>", opts)
 
 --BUFFERS
 --list buffers and switch
-keymap("n", "<leader>bl", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>bc", ":Bdelete<CR>", opts)
 keymap("n", "<leader>bp", ":bprevious<CR>", opts)
 keymap("n", "<leader>bn", ":bNext<CR>", opts)
@@ -81,3 +80,17 @@ nmap <F10> <cmd>call vimspector#StepInto()<cr>")
 keymap("n", "Db", ":call vimspector#ToggleBreakpoint()<cr>", opts)
 keymap("n", "Dw", ":call vimspector#AddWatch()<cr>", opts)
 keymap("n", "De", ":call vimspector#Evaluate()<cr>", opts)
+
+--TELESCOPE BINDINGS
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+vim.keymap.set("n", "<leader>gf", builtin.git_files, opts)
+vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
+vim.keymap.set("n", "<leader>ft", builtin.live_grep, opts)
+vim.keymap.set("n", "<leader>fr", builtin.lsp_references, opts)
+vim.keymap.set("n", "<leader>vk", builtin.keymaps, opts)
+vim.keymap.set("n", "<leader>vv", builtin.treesitter, opts)
+vim.keymap.set("n", "<leader>sc", builtin.spell_suggest, opts)
+vim.keymap.set("n", "<leader>ch", builtin.command_history, opts)
+vim.keymap.set("n", "<leader>of", builtin.oldfiles, opts)
+vim.keymap.set("n", "<leader>vo", builtin.vim_options, opts)
