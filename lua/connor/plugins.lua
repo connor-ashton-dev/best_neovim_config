@@ -58,6 +58,9 @@ return require("packer").startup(function(use)
 	--CLOSE BUFFERS
 	use("moll/vim-bbye")
 
+	--WHICHKEY
+	use("folke/which-key.nvim")
+
 	--HARPOON
 	use("ThePrimeagen/harpoon")
 

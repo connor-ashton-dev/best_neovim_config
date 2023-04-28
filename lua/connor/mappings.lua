@@ -39,6 +39,7 @@ keymap("x", "<leader>p", [["_dP]], opts)
 
 --see all todo comments
 keymap("n", "<leader>vc", ":TodoTelescope<CR>", opts)
+--
 --see errors
 
 keymap("n", "<leader>ve", ":TroubleToggle<CR>", opts)
@@ -87,13 +88,13 @@ keymap("n", "<leader>e", ":Telescope file_browser path=%:p:h select_buffer=true<
 --TELESCOPE BINDINGS
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
-vim.keymap.set("n", "<leader>gf", builtin.git_files, opts)
-vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
+vim.keymap.set("n", "<leader>fg", builtin.git_files, opts)
+vim.keymap.set("n", "<leader>bl", builtin.buffers, opts)
 vim.keymap.set("n", "<leader>ft", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, opts)
 vim.keymap.set("n", "<leader>vk", builtin.keymaps, opts)
-vim.keymap.set("n", "<leader>vv", builtin.treesitter, opts)
-vim.keymap.set("n", "<leader>sc", builtin.spell_suggest, opts)
+vim.keymap.set("n", "<leader>fv", builtin.treesitter, opts)
+vim.keymap.set("n", "<leader>fs", builtin.spell_suggest, opts)
 vim.keymap.set("n", "<leader>vh", builtin.command_history, opts)
-vim.keymap.set("n", "<leader>of", builtin.oldfiles, opts)
+vim.keymap.set("n", "<leader>fo", builtin.oldfiles, opts)
 vim.keymap.set("n", "<leader>vo", builtin.vim_options, opts)
