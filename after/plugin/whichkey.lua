@@ -43,7 +43,7 @@ local setup = {
 		scroll_up = "<c-u>", -- binding to scroll up inside the popup
 	},
 	window = {
-		border = "rounded", -- none, single, double, shadow
+		border = "single", -- none, single, double, shadow
 		position = "bottom", -- bottom, top
 		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
 		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
@@ -72,7 +72,7 @@ local setup = {
 local opts = {
 	mode = "n", -- NORMAL mode
 	prefix = "<leader>",
-	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	buffer = nil, -- Glo vim.lsp.buf.format({ async = true })bal mappings. Specify a buffer number for buffer local mappings
 	silent = true, -- use `silent` when creating keymaps
 	noremap = true, -- use `noremap` when creating keymaps
 	nowait = true, -- use `nowait` when creating keymaps
@@ -118,7 +118,7 @@ local mappings = {
 	},
 	f = {
 		name = "File",
-		d = { "lua vim.lsp.buf.format({ async = true })", "Format" },
+		d = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 		f = {
 			"<cmd>lua require('telescope.builtin').find_files()<cr>",
 			"Find Files",
