@@ -110,7 +110,7 @@ local mappings = {
 		name = "Buffers",
 		c = { ":Bdelete<CR>", "Close Buffer" },
 		p = { ":bprevious<CR>", "Previous Buffer" },
-		n = { ":bNext<CR>", "Next Buffer" },
+		n = { ":bnext<CR>", "Next Buffer" },
 		l = {
 			"<cmd>lua require('telescope.builtin').buffers()<cr>",
 			"List",
