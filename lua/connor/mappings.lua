@@ -30,7 +30,7 @@ keymap("n", "N", "Nzzzv", opts)
 --save and format
 keymap("n", "<leader>w", ":w<CR>", opts)
 --mega quit
-keymap("n", "<leader>K", ":qa!<CR>", opts)
+keymap("n", "<leader>K", ":xa!<CR>", opts)
 --kinda quit
 keymap("n", "<leader>q", ":q!<CR>", opts)
 
