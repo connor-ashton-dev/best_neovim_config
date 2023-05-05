@@ -8,13 +8,20 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.opt.autoindent = true
 
 vim.opt.fillchars:append({ eob = " " })
 
-vim.opt.smartindent = true
+vim.opt.smartindent = false
+vim.opt.cindent = true
 vim.opt.showmode = false
-
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
+	end,
+})
 vim.opt.wrap = false
+vim.opt.mouse = "a"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
