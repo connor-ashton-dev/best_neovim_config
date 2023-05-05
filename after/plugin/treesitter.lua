@@ -10,7 +10,8 @@ require("nvim-treesitter.configs").setup({
 		enable_autocmd = false,
 	},
 	auto_install = true,
-	ident = { enable = true },
+	indent = { enable = false },
+	-- indent = { enable = true, disable = { "javascript" } },
 	rainbow = {
 		enable = true,
 		extended_mode = true,
