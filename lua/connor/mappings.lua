@@ -48,7 +48,7 @@ keymap("n", "<leader>ve", ":TroubleToggle<CR>", opts)
 --list buffers and switch
 keymap("n", "<leader>bc", ":Bdelete<CR>", opts)
 keymap("n", "<leader>bp", ":bprevious<CR>", opts)
-keymap("n", "<leader>bn", ":bNext<CR>", opts)
+keymap("n", "<leader>bn", ":bnext<CR>", opts)
 
 -- go into normal mode
 -- keymap("i", "LL", "<ESC>", opts)

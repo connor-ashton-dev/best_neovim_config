@@ -22,15 +22,6 @@ return require("packer").startup(function(use)
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	})
 
-	--COLORS
-	-- use({
-	-- 	"rose-pine/neovim",
-	-- 	as = "rose-pine",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme rose-pine")
-	-- 	end,
-	-- })
-
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
@@ -77,17 +68,15 @@ return require("packer").startup(function(use)
 		"neovim/nvim-lspconfig",
 	})
 	--Completion
-	use({
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-nvim-lsp",
-		"L3MON4D3/LuaSnip",
-		"hrsh7th/cmp-nvim-lua",
-		"hrsh7th/cmp-nvim-lsp-signature-help",
-		"hrsh7th/cmp-vsnip",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/vim-vsnip",
-	})
+	use("hrsh7th/nvim-cmp") -- The completion plugin
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-nvim-lua") -- snippets
+	use("L3MON4D3/LuaSnip") --snippet engine
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
 	--WINBAR
 	use({ "fgheng/winbar.nvim" })
@@ -108,6 +97,8 @@ return require("packer").startup(function(use)
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
 	})
 
+	--GITHUB COPILOT
+	use("github/copilot.vim")
 	--null-ls for formatting
 	use("jose-elias-alvarez/null-ls.nvim")
 
@@ -146,5 +137,9 @@ return require("packer").startup(function(use)
 	})
 
 	--RUST STUFF
+	use({
+		"simrat39/rust-tools.nvim",
+	})
+	use("mfussenegger/nvim-dap")
 	use("puremourning/vimspector")
 end)
