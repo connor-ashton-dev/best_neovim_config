@@ -88,9 +88,12 @@ local mappings = {
 	g = {
 		name = "Git",
 		g = { ":Git<CR>", "Fugitive" },
-		ce = { ":Copilot enable<CR>", "Enable Copilot" },
-		cd = { ":Copilot disable<CR>", "Disable Copilot" },
-		cs = { ":Copilot status<CR>", "Copilot Status" },
+		c = {
+			name = "Copilot",
+			e = { ":Copilot enable<CR>", "Enable Copilot" },
+			d = { ":Copilot disable<CR>", "Disable Copilot" },
+			s = { ":Copilot status<CR>", "Copilot Status" },
+		},
 	},
 	v = {
 		name = "View",
