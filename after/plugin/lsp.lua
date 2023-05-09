@@ -9,16 +9,17 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"denols",
 		"eslint",
-		"rust_analyzer",
+		-- "rust_analyzer",
 	},
 })
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local util = require("lspconfig/util")
 
-lspconfig.pyright.setup({
-	capabilities = capabilities,
-})
+local border =
+	{ "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, lspconfig.pyright.setup({
+		capabilities = capabilities,
+	})
 lspconfig.tsserver.setup({
 	capabilities = capabilities,
 	on_attach = function(client)
@@ -39,18 +40,25 @@ lspconfig.lua_ls.setup({
 lspconfig.tailwindcss.setup({ capabilities = capabilities })
 lspconfig.pyright.setup({ capabilities = capabilities })
 lspconfig.jsonls.setup({ capabilities = capabilities })
-lspconfig.rust_analyzer.setup({
-	capabilities = capabilities,
-	filetypes = { "rust" },
-	root_dir = util.root_pattern("Cargo.toml"),
-	settings = {
-		["rust_analyzer"] = {
-			cargo = {
-				allFeature = true,
-			},
-		},
-	},
-})
+-- lspconfig.rust_analyzer.setup({
+-- 	capabilities = capabilities,
+-- 	filetypes = { "rust" },
+-- 	root_dir = util.root_pattern("Cargo.toml"),
+-- 	settings = {
+-- 		["rust_analyzer"] = {
+-- 			cargo = {
+-- 				allFeature = true,
+-- 			},
+-- 		},
+-- 	},
+-- })
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border or border
+	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -74,7 +82,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- end, opts)
 		--vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-		vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+		-- vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 		vim.keymap.set("n", "<space>fd", function()
 			vim.lsp.buf.format({ async = true })

@@ -191,6 +191,11 @@ _G.packer_plugins = {
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/start/nvim-surround",
     url = "https://github.com/kylechui/nvim-surround"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/connorashton/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -207,9 +212,14 @@ _G.packer_plugins = {
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
+<<<<<<< HEAD
     loaded = false,
     needs_bufread = false,
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+=======
+    loaded = true,
+    path = "/Users/connorashton/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+>>>>>>> 31f16a13557c5855738f1523aeda5a9342a1d0f2
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -227,11 +237,14 @@ _G.packer_plugins = {
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+<<<<<<< HEAD
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
     url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
+=======
+>>>>>>> 31f16a13557c5855738f1523aeda5a9342a1d0f2
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -264,11 +277,14 @@ _G.packer_plugins = {
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+<<<<<<< HEAD
   vimspector = {
     loaded = true,
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/start/vimspector",
     url = "https://github.com/puremourning/vimspector"
   },
+=======
+>>>>>>> 31f16a13557c5855738f1523aeda5a9342a1d0f2
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/cashton/.local/share/nvim/site/pack/packer/start/which-key.nvim",
@@ -282,6 +298,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+<<<<<<< HEAD
+=======
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+try_loadstring("\27LJ\2\n†\1\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\1\0\1\27transparent_background\2\nsetup\15catppuccin\frequire\0", "config", "catppuccin")
+time([[Config for catppuccin]], false)
+>>>>>>> 31f16a13557c5855738f1523aeda5a9342a1d0f2
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
@@ -294,10 +317,13 @@ time([[Config for trouble.nvim]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+<<<<<<< HEAD
 -- Config for: catppuccin
 time([[Config for catppuccin]], true)
 try_loadstring("\27LJ\2\n†\1\0\0\3\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\4\0009\0\5\0'\2\6\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\1\0\1\27transparent_background\2\nsetup\15catppuccin\frequire\0", "config", "catppuccin")
 time([[Config for catppuccin]], false)
+=======
+>>>>>>> 31f16a13557c5855738f1523aeda5a9342a1d0f2
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

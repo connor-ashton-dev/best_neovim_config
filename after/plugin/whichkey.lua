@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-	["e"] = { ":Telescope file_browser path=%:p:h select_buffer=true<CR>", "Explorer" },
+	["e"] = { ":NvimTreeToggle<CR>", "Explorer" },
 	["d"] = { ":! pwd<CR>", "PWD" },
 	["w"] = { ":w<CR>", "Save" },
 	["q"] = { ":q!<CR>", "Quit" },
@@ -88,6 +88,12 @@ local mappings = {
 	g = {
 		name = "Git",
 		g = { ":Git<CR>", "Fugitive" },
+		c = {
+			name = "Copilot",
+			e = { ":Copilot enable<CR>", "Enable Copilot" },
+			d = { ":Copilot disable<CR>", "Disable Copilot" },
+			s = { ":Copilot status<CR>", "Copilot Status" },
+		},
 	},
 	v = {
 		name = "View",
@@ -120,7 +126,7 @@ local mappings = {
 		name = "File",
 		d = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
 		f = {
-			"<cmd>lua require('telescope.builtin').find_files()<cr>",
+			":Telescope find_files<CR>",
 			"Find Files",
 		},
 		g = {
