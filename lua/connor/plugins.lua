@@ -17,10 +17,24 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	--FILE BROWSERS
+
 	use({
-		"nvim-telescope/telescope-file-browser.nvim",
-		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional
+		},
 	})
+
+	-- use({
+	-- 	"nvim-telescope/telescope-file-browser.nvim",
+	-- 	requires = {
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 		"lewis6991/gitsigns.nvim",
+	-- 	},
+	-- })
 
 	use({
 		"catppuccin/nvim",

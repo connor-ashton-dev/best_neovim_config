@@ -66,7 +66,8 @@ cmp.setup({
 		{ name = "calc" }, -- source for math calculation
 	},
 	formatting = {
-		fields = { "abbr", "kind", "menu" },
+		fields = { "kind", "abbr", "menu" },
+		-- fields = { "kind", "abbr" },
 		format = function(entry, item)
 			local menu_icon = {
 				nvim_lsp = "[LSP]",
