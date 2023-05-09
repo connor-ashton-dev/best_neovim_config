@@ -10,6 +10,12 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+vim.api.nvim_create_autocmd({ "QuitPre" }, {
+	callback = function()
+		vim.cmd("NvimTreeClose")
+	end,
+})
+
 nvim_tree.setup({
 	update_focused_file = {
 		enable = true,
@@ -41,6 +47,13 @@ nvim_tree.setup({
 					ignored = "◌",
 				},
 			},
+		},
+	},
+	tab = {
+		sync = {
+			open = false,
+			close = true,
+			ignore = {},
 		},
 	},
 	diagnostics = {
