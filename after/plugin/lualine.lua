@@ -43,7 +43,7 @@ require("lualine").setup({
 		lualine_b = { "filename", "branch" },
 		lualine_c = {},
 		lualine_x = {},
-		lualine_y = { "filetype", "progress" },
+		lualine_y = { "filetype", "diagnostics" },
 		lualine_z = {
 			{ "location", separator = { right = "" }, left_padding = 2 },
 		},
