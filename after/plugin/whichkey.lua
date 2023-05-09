@@ -122,6 +122,10 @@ local mappings = {
 			"List",
 		},
 	},
+	r = {
+		name = "Rust",
+		r = { ":RustRun<CR>", "Run" },
+	},
 	f = {
 		name = "File",
 		d = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
