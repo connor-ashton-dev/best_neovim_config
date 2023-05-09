@@ -2,18 +2,7 @@ vim.opt.guicursor = ""
 
 --vim.cmd.colorscheme("catppuccin")
 vim.opt.nu = true
-
---autocommand to change to relative number in insert mode and back to normal in normal mode
-vim.api.nvim_exec(
-	[[
-    augroup numbertoggle
-      autocmd!
-      autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-      autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-    augroup END
-  ]],
-	true
-)
+vim.opt.relativenumber = true
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

@@ -100,6 +100,7 @@ local mappings = {
 		name = "View",
 		c = { ":TodoTelescope<CR>", "View Comments" },
 		e = { ":TroubleToggle<CR>", "View Errors" },
+		n = { ":set relativenumber!<CR>", "Toggle Relative Line Numbers" },
 		k = {
 			"<cmd>lua require('telescope.builtin').keymaps()<cr>",
 			"View Keymaps",
