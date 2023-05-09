@@ -126,6 +126,11 @@ local mappings = {
 	r = {
 		name = "Rust",
 		r = { ":RustRun<CR>", "Run" },
+		c = {
+			name = "Cargo",
+			r = { ":! cargo run<CR>", "Run" },
+			c = { ":! cargo check<CR>", "Check" },
+		},
 	},
 	f = {
 		name = "File",
