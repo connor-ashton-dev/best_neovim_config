@@ -4,141 +4,157 @@
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
-  -- Packer can manage itself
-  use("wbthomason/packer.nvim")
+	-- Packer can manage itself
+	use("wbthomason/packer.nvim")
 
-  --USER PLUGINS
+	--USER PLUGINS
 
-  --TELESCOPE
-  use({
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.1",
-    -- or                            , branch = '0.1.x',
-    requires = { { "nvim-lua/plenary.nvim" } },
-  })
+	--TELESCOPE
+	use({
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.1",
+		-- or                            , branch = '0.1.x',
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 
-  --FILE BROWSERS
+	--FILE BROWSERS
 
-  use({
-    "nvim-tree/nvim-tree.lua",
-    requires = {
-      "nvim-tree/nvim-web-devicons", -- optional
-    },
-  })
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional
+		},
+	})
 
-  -- use({
-  -- 	"nvim-telescope/telescope-file-browser.nvim",
-  -- 	requires = {
-  -- 		"nvim-telescope/telescope.nvim",
-  -- 		"nvim-lua/plenary.nvim",
-  -- 		"nvim-tree/nvim-web-devicons",
-  -- 		"lewis6991/gitsigns.nvim",
-  -- 	},
-  -- })
+	-- use({
+	-- 	"nvim-telescope/telescope-file-browser.nvim",
+	-- 	requires = {
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 		"lewis6991/gitsigns.nvim",
+	-- 	},
+	-- })
 
-  use({
-    "catppuccin/nvim",
-    as = "catppuccin",
-    config = function()
-      require("catppuccin").setup({
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+		config = function()
+			require("catppuccin").setup({
 
-        transparent_background = true,
-      })
-      vim.cmd("colorscheme catppuccin")
-    end,
-  })
+				transparent_background = true,
+			})
+			vim.cmd("colorscheme catppuccin")
+		end,
+	})
 
-  use({
-    "nvim-lualine/lualine.nvim",
-    requires = { "nvim-tree/nvim-web-devicons", opt = true },
-  })
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	})
 
-  --TREESITTER
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    requires = { { "JoosepAlviste/nvim-ts-context-commentstring" } },
-  })
+	--TREESITTER
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+		requires = { { "JoosepAlviste/nvim-ts-context-commentstring" } },
+	})
 
-  --CLOSE BUFFERS
-  use("moll/vim-bbye")
+	--CLOSE BUFFERS
+	use("moll/vim-bbye")
 
-  --WHICHKEY
-  use("folke/which-key.nvim")
+	--WHICHKEY
+	use("folke/which-key.nvim")
 
-  --HARPOON
-  use("ThePrimeagen/harpoon")
+	--HARPOON
+	use("ThePrimeagen/harpoon")
 
-  --UndoTree
-  use("mbbill/undotree")
+	--UndoTree
+	use("mbbill/undotree")
 
-  -- Vim Fugitive
-  use("tpope/vim-fugitive")
+	-- Vim Fugitive
+	use("tpope/vim-fugitive")
 
-  --LSP STUFF
-  use({
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  })
-  --Completion
-  use("hrsh7th/nvim-cmp")            -- The completion plugin
-  use("hrsh7th/cmp-buffer")          -- buffer completions
-  use("hrsh7th/cmp-path")            -- path completions
-  use("hrsh7th/cmp-cmdline")         -- cmdline completions
-  use("saadparwaiz1/cmp_luasnip")    -- snippet completions
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-nvim-lua")        -- snippets
-  use("L3MON4D3/LuaSnip")            --snippet engine
-  use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	--LSP STUFF
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	})
+	--Completion
+	use("hrsh7th/nvim-cmp") -- The completion plugin
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-nvim-lua") -- snippets
+	use("L3MON4D3/LuaSnip") --snippet engine
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
-  --WINBAR
-  use({ "fgheng/winbar.nvim" })
-  --LIGHTSPEED
-  use("ggandor/lightspeed.nvim")
+	--WINBAR
+	use({ "fgheng/winbar.nvim" })
+	--LIGHTSPEED
+	use("ggandor/lightspeed.nvim")
 
-  --EDITOR STUFF
-  --autotag and pair
-  use({
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup({})
-    end,
-  })
-  use("windwp/nvim-ts-autotag")
-  use({
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-  })
+	--EDITOR STUFF
+	--autotag and pair
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
+	use("windwp/nvim-ts-autotag")
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+	})
 
-  --GITHUB COPILOT
-  use("github/copilot.vim")
-  --null-ls for formatting
-  use("jose-elias-alvarez/null-ls.nvim")
+	use("p00f/nvim-ts-rainbow")
 
-  --comments
-  use("numToStr/Comment.nvim")
-  use("JoosepAlviste/nvim-ts-context-commentstring")
-  use({
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
-    end,
-  })
-  --GIT SIGNS
-  use({
-    "lewis6991/gitsigns.nvim",
-    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-  })
+	use("lukas-reineke/indent-blankline.nvim")
 
-  --RUST STUFF
-  use({
-    "simrat39/rust-tools.nvim",
-  })
-  use("mfussenegger/nvim-dap")
+	--GITHUB COPILOT
+	use("github/copilot.vim")
+	--null-ls for formatting
+	use("jose-elias-alvarez/null-ls.nvim")
+
+	--comments
+	use("numToStr/Comment.nvim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+
+	use({
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	--GIT SIGNS
+	-- use({
+	--   "lewis6991/gitsigns.nvim",
+	--   -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+	-- })
+
+	--RUST STUFF
+	use({
+		"simrat39/rust-tools.nvim",
+	})
+	use("mfussenegger/nvim-dap")
 end)

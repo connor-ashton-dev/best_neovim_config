@@ -54,6 +54,22 @@ lspconfig.jsonls.setup({ capabilities = capabilities })
 -- 	},
 -- })
 
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  float = {
+    border = "single",
+    format = function(diagnostic)
+      return string.format(
+        "%s (%s) [%s]",
+        diagnostic.message,
+        diagnostic.source,
+        diagnostic.code or diagnostic.user_data.lsp.code
+      )
+    end,
+  },
+})
+
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
@@ -80,6 +96,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "H", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
+    -- vim.keymap.set("n", "gn", vim.diagnostic.get_next, opts)
+    -- vim.keymap.set("n", "gp", vim.diagnostic.get_prev, opts)
     -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
     -- vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
     -- vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)

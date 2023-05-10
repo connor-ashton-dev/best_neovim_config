@@ -80,7 +80,7 @@ local opts = {
 
 local mappings = {
 	["e"] = { ":NvimTreeToggle<CR>", "Explorer" },
-	["d"] = { ":! pwd<CR>", "PWD" },
+	["D"] = { ":! pwd<CR>", "PWD" },
 	["w"] = { ":w<CR>", "Save" },
 	["q"] = { ":conf q<CR>", "Close File" },
 	["L"] = { ":conf qa<CR>", "Leave" },
@@ -96,11 +96,19 @@ local mappings = {
 			s = { ":Copilot status<CR>", "Copilot Status" },
 		},
 	},
+	d = {
+		name = "diagnostics",
+		--goto next diagnostic but don't display float
+		n = { "<cmd>lua vim.diagnostic.goto_next({float = false})<CR>", "Next Diagnostic" },
+		--get previous diagnostic
+		p = { "<cmd>lua vim.diagnostic.goto_prev({float = false})<CR>", "Previous Diagnostic" },
+	},
 	v = {
 		name = "View",
 		c = { ":TodoTelescope<CR>", "View Comments" },
 		e = { ":TroubleToggle<CR>", "View Errors" },
-		n = { ":set relativenumber!<CR>", "Toggle Relative Line Numbers" },
+		--get next diagnostic
+		l = { ":set relativenumber!<CR>", "Toggle Relative Line Numbers" },
 		k = {
 			"<cmd>lua require('telescope.builtin').keymaps()<cr>",
 			"View Keymaps",
