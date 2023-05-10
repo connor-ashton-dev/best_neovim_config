@@ -99,9 +99,9 @@ local mappings = {
 	d = {
 		name = "diagnostics",
 		--goto next diagnostic but don't display float
-		n = { "<cmd>lua vim.diagnostic.goto_next({float = false})<CR>", "Next Diagnostic" },
+		n = { "<cmd>lua vim.diagnostic.goto_next({float = true})<CR>", "Next Diagnostic" },
 		--get previous diagnostic
-		p = { "<cmd>lua vim.diagnostic.goto_prev({float = false})<CR>", "Previous Diagnostic" },
+		p = { "<cmd>lua vim.diagnostic.goto_prev({float = true})<CR>", "Previous Diagnostic" },
 	},
 	v = {
 		name = "View",
