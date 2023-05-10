@@ -96,8 +96,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "H", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
-    -- vim.keymap.set("n", "gn", vim.diagnostic.get_next, opts)
-    -- vim.keymap.set("n", "gp", vim.diagnostic.get_prev, opts)
+    vim.keymap.set("n", "gn", vim.diagnostic.goto_next, opts)
+    vim.keymap.set("n", "gp", vim.diagnostic.goto_prev, opts)
+    --get previous diagnostic
+    -- p = { "<cmd>lua vim.diagnostic.goto_prev({float = true})<CR>", "Previous Diagnostic" },
     -- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
     -- vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
     -- vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)

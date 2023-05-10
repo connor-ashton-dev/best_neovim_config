@@ -96,13 +96,13 @@ local mappings = {
 			s = { ":Copilot status<CR>", "Copilot Status" },
 		},
 	},
-	d = {
-		name = "diagnostics",
-		--goto next diagnostic but don't display float
-		n = { "<cmd>lua vim.diagnostic.goto_next({float = true})<CR>", "Next Diagnostic" },
-		--get previous diagnostic
-		p = { "<cmd>lua vim.diagnostic.goto_prev({float = true})<CR>", "Previous Diagnostic" },
-	},
+	-- d = {
+	-- 	name = "diagnostics",
+	-- 	--goto next diagnostic but don't display float
+	-- 	n = { "<cmd>lua vim.diagnostic.goto_next({float = true})<CR>", "Next Diagnostic" },
+	-- 	--get previous diagnostic
+	-- 	p = { "<cmd>lua vim.diagnostic.goto_prev({float = true})<CR>", "Previous Diagnostic" },
+	-- },
 	v = {
 		name = "View",
 		c = { ":TodoTelescope<CR>", "View Comments" },
