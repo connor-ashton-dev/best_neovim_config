@@ -75,9 +75,12 @@ return require("packer").startup(function(use)
 	-- Vim Fugitive
 	use("tpope/vim-fugitive")
 
-	--LSP STUFF
+	--	LSP STUFF
 	use({
 		"williamboman/mason.nvim",
+		run = ":MasonUpdate", -- :MasonUpdate updates registry contents
+	})
+	use({
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	})
@@ -157,4 +160,7 @@ return require("packer").startup(function(use)
 		"simrat39/rust-tools.nvim",
 	})
 	use("mfussenegger/nvim-dap")
+
+	--GO STUFF
+	use("fatih/vim-go", { run = ":GoUpdateBinaries" })
 end)
