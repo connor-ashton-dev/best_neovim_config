@@ -114,6 +114,16 @@ return require("packer").startup(function(use)
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
 	})
 
+	--view pictures
+	use({
+		"edluffy/hologram.nvim",
+		config = function()
+			require("hologram").setup({
+				auto_display = true,
+			})
+		end,
+	})
+
 	use("p00f/nvim-ts-rainbow")
 
 	use("lukas-reineke/indent-blankline.nvim")
