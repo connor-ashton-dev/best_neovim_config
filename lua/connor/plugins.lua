@@ -173,4 +173,7 @@ return require("packer").startup(function(use)
 
 	--GO STUFF
 	use("fatih/vim-go", { run = ":GoUpdateBinaries" })
+	--TMUX navigation
+	use("alexghergh/nvim-tmux-navigation")
+	--end of everything
 end)
