@@ -18,6 +18,8 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 --jumping around with c and d
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "<C-e>", "10zl", opts)
+keymap("n", "<C-a>", "10zh", opts)
 
 --remove highlight with ESC
 keymap("n", "<ESC>", ":nohl<CR>", opts)

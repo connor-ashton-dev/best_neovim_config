@@ -41,6 +41,8 @@ local setup = {
 	popup_mappings = {
 		scroll_down = "<c-d>", -- binding to scroll down inside the popup
 		scroll_up = "<c-u>", -- binding to scroll up inside the popup
+		scroll_left = "<c-a>",
+		scroll_right = "<c-e>",
 	},
 	window = {
 		border = "single", -- none, single, double, shadow
@@ -140,6 +142,10 @@ local mappings = {
 			r = { ":! cargo run<CR>", "Run" },
 			c = { ":! cargo check<CR>", "Check" },
 		},
+	},
+	G = {
+		name = "Go",
+		r = { ":GoRun<CR>", "Run" },
 	},
 	f = {
 		name = "File",
