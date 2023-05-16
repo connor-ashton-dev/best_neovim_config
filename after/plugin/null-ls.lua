@@ -8,6 +8,10 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
+null_ls.builtins.code_actions.eslint.with({
+	only_local = "node_modules/.bin",
+})
+
 null_ls.setup({
 	debug = false,
 	on_attach = function(client, bufnr)
@@ -22,13 +26,16 @@ null_ls.setup({
 			})
 		end
 	end,
+
 	sources = {
 		--[[ formatting.prettier.with({ extra_args = {  "--single-quote", "--jsx-single-quote" } }), ]]
 		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.rustfmt,
 		formatting.stylua,
-		diagnostics.eslint,
+		diagnostics.eslint.with({
+			only_local = "node_modules/.bin",
+		}),
 		-- diagnostics.flake8
 	},
 })
