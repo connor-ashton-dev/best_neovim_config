@@ -4,14 +4,14 @@
 
 -- stylua: ignore
 local colors = {
-  blue   = '#80a0ff',
-  cyan   = '#79dac8',
-  black  = '#080808',
-  white  = '#c6c6c6',
-  red    = '#ff5189',
-  violet = '#d183e8',
-  orange = '#fea69a',
-  grey   = '#303030',
+    blue   = '#80a0ff',
+    cyan   = '#79dac8',
+    black  = '#080808',
+    white  = '#c6c6c6',
+    red    = '#ff5189',
+    violet = '#d183e8',
+    orange = '#fea69a',
+    grey   = '#303030',
 }
 
 local bubbles_theme = {
@@ -35,6 +35,7 @@ require("lualine").setup({
 		theme = bubbles_theme,
 		component_separators = "|",
 		section_separators = { left = "", right = "" },
+		disabled_filetypes = { "NvimTree", "packer" },
 	},
 	sections = {
 		lualine_a = {

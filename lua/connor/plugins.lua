@@ -160,7 +160,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("karb94/neoscroll.nvim")
+	-- use("karb94/neoscroll.nvim")
 	--GIT SIGNS
 	-- use({
 	--   "lewis6991/gitsigns.nvim",
@@ -177,5 +177,6 @@ return require("packer").startup(function(use)
 	use("fatih/vim-go", { run = ":GoUpdateBinaries" })
 	--TMUX navigation
 	use("alexghergh/nvim-tmux-navigation")
+
 	--end of everything
 end)
