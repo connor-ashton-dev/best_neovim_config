@@ -12,21 +12,22 @@ local colors = {
     violet = '#d183e8',
     orange = '#fea69a',
     grey   = '#303030',
+    nvim   = "#1E1D2D",
 }
 
 local bubbles_theme = {
 	normal = {
 		a = { fg = colors.black, bg = colors.orange },
 		b = { fg = colors.white, bg = colors.grey },
-		c = { fg = colors.black, bg = colors.clear },
+		c = { fg = colors.nvim, bg = colors.clear },
 	},
 	insert = { a = { fg = colors.black, bg = colors.blue } },
 	visual = { a = { fg = colors.black, bg = colors.cyan } },
 	replace = { a = { fg = colors.black, bg = colors.red } },
 	inactive = {
-		a = { fg = colors.white, bg = colors.black },
-		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.black, bg = colors.black },
+		a = { fg = colors.white, bg = colors.nvim },
+		b = { fg = colors.white, bg = colors.nvim },
+		c = { fg = colors.black, bg = colors.nvim },
 	},
 }
 

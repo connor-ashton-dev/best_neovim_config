@@ -36,15 +36,13 @@ return require("packer").startup(function(use)
 	-- 	},
 	-- })
 
+	-- use({ "rose-pine/neovim", as = "rose-pine" })
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin",
 		config = function()
-			require("catppuccin").setup({
-
-				transparent_background = true,
-			})
-			vim.cmd("colorscheme catppuccin")
+			require("catppuccin").setup({})
+			vim.cmd("colorscheme catppuccin-macchiato")
 		end,
 	})
 
@@ -74,7 +72,6 @@ return require("packer").startup(function(use)
 
 	-- Vim Fugitive
 	use("tpope/vim-fugitive")
-
 	--	LSP STUFF
 	use({
 		"williamboman/mason.nvim",
@@ -124,7 +121,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("p00f/nvim-ts-rainbow")
+	-- use("p00f/nvim-ts-rainbow")
 
 	use("lukas-reineke/indent-blankline.nvim")
 
