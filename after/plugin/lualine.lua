@@ -12,7 +12,7 @@ local colors = {
     violet = '#d183e8',
     orange = '#fea69a',
     grey   = '#303030',
-    nvim   = "#1E1D2D",
+    nvim   = "#24273a",
 }
 
 local bubbles_theme = {
