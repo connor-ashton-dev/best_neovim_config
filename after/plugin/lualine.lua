@@ -25,9 +25,9 @@ local bubbles_theme = {
 	visual = { a = { fg = colors.black, bg = colors.cyan } },
 	replace = { a = { fg = colors.black, bg = colors.red } },
 	inactive = {
-		a = { fg = colors.white, bg = colors.nvim },
-		b = { fg = colors.white, bg = colors.nvim },
-		c = { fg = colors.black, bg = colors.nvim },
+		a = { fg = colors.white, bg = colors.clear },
+		b = { fg = colors.white, bg = colors.clear },
+		c = { fg = colors.black, bg = colors.clear },
 	},
 }
 
@@ -41,6 +41,7 @@ require("lualine").setup({
 	sections = {
 		lualine_a = {
 			{ "mode", separator = { left = "" }, right_padding = 2 },
+			-- { "mode", separator = { left = "" } },
 		},
 		lualine_b = { "filename", "branch" },
 		lualine_c = {},
@@ -48,6 +49,7 @@ require("lualine").setup({
 		lualine_y = { "filetype", "diagnostics" },
 		lualine_z = {
 			{ "location", separator = { right = "" }, left_padding = 2 },
+			-- { "location", separator = { right = "" } },
 		},
 	},
 	inactive_sections = {
