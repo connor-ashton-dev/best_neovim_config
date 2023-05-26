@@ -147,6 +147,10 @@ local mappings = {
 		name = "Go",
 		r = { ":GoRun<CR>", "Run" },
 	},
+	n = {
+		name = "Neovim",
+		r = { ":bufdo :e!<CR>", "Reload All Buffers" },
+	},
 	f = {
 		name = "File",
 		d = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
