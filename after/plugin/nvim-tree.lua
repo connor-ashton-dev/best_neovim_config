@@ -25,12 +25,26 @@ nvim_tree.setup({
 	renderer = {
 		root_folder_modifier = ":t",
 		icons = {
+			webdev_colors = true,
+			git_placement = "before",
+			modified_placement = "after",
+			padding = " ",
+			symlink_arrow = " ➛ ",
+			show = {
+				file = true,
+				folder = true,
+				folder_arrow = true,
+				git = true,
+				modified = true,
+			},
 			glyphs = {
 				default = "",
 				symlink = "",
+				bookmark = "󰆤",
+				modified = "●",
 				folder = {
-					arrow_open = "",
 					arrow_closed = "",
+					arrow_open = "",
 					default = "",
 					open = "",
 					empty = "",
@@ -39,11 +53,11 @@ nvim_tree.setup({
 					symlink_open = "",
 				},
 				git = {
-					unstaged = "",
-					staged = "S",
+					unstaged = "✗",
+					staged = "✓",
 					unmerged = "",
 					renamed = "➜",
-					untracked = "U",
+					untracked = "★",
 					deleted = "",
 					ignored = "◌",
 				},
@@ -68,8 +82,18 @@ nvim_tree.setup({
 			error = "",
 		},
 	},
+	modified = {
+		enable = true,
+		show_on_dirs = true,
+		show_on_open_dirs = true,
+	},
 	git = {
 		ignore = false,
+	},
+	actions = {
+		open_file = {
+			quit_on_open = false,
+		},
 	},
 	view = {
 		width = 25,
