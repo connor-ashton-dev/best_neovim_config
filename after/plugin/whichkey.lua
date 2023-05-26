@@ -149,7 +149,8 @@ local mappings = {
 	},
 	n = {
 		name = "Neovim",
-		r = { ":bufdo :e!<CR>", "Reload All Buffers" },
+		ra = { ":bufdo :e!<CR>", "Reload All Buffers" },
+		ro = { ":e!<CR>", "Reload Current Buffer" },
 	},
 	f = {
 		name = "File",
