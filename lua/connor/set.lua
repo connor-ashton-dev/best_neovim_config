@@ -8,11 +8,15 @@ vim.g.editorconfig = true
 --sets clipboard to system
 vim.api.nvim_set_option("clipboard", "unnamed")
 
+vim.opt.ignorecase = true
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.opt.fillchars:append({ eob = " " })
 
