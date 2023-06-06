@@ -31,6 +31,7 @@ null_ls.setup({
 		--[[ formatting.prettier.with({ extra_args = {  "--single-quote", "--jsx-single-quote" } }), ]]
 		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
+		formatting.astyle,
 		formatting.rustfmt,
 		formatting.stylua,
 		diagnostics.eslint.with({
