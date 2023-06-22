@@ -7,11 +7,11 @@ local kind_icons = {
 	Function = "",
 	Constructor = "",
 	Field = "",
-	Variable = "󰏖",
+	Variable = "󱀆",
 	Class = "󱆀",
 	Interface = "",
 	Module = "",
-	Property = "",
+	Property = "",
 	Unit = "",
 	Value = "󰇽",
 	Enum = "",
@@ -67,7 +67,6 @@ cmp.setup({
 	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
-		-- fields = { "kind", "abbr" },
 		format = function(entry, item)
 			local menu_icon = {
 				nvim_lsp = "[LSP]",
