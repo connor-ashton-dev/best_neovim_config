@@ -53,20 +53,20 @@ nvim_tree.setup({
 					symlink_open = "",
 				},
 				git = {
-					unstaged = "✗",
+					unstaged = "󱦟",
 					staged = "✓",
 					unmerged = "",
 					renamed = "➜",
-					untracked = "★",
+					untracked = "◌",
 					deleted = "",
-					ignored = "◌",
+					ignored = "",
 				},
 			},
 		},
 	},
 	tab = {
 		sync = {
-			open = false,
+			open = true,
 			close = true,
 			ignore = {},
 		},
@@ -88,11 +88,13 @@ nvim_tree.setup({
 		show_on_open_dirs = true,
 	},
 	git = {
+		show_on_dirs = false,
+
 		ignore = false,
 	},
 	actions = {
 		open_file = {
-			quit_on_open = false,
+			quit_on_open = true,
 		},
 	},
 	view = {

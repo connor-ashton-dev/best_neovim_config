@@ -34,15 +34,17 @@ return require("packer").startup(function(use)
 	-- 	},
 	-- })
 
+	use("navarasu/onedark.nvim")
+	-- use({ "ellisonleao/gruvbox.nvim" })
 	-- use({ "rose-pine/neovim", as = "rose-pine" })
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
-		config = function()
-			require("catppuccin").setup({})
-			vim.cmd("colorscheme catppuccin-macchiato")
-		end,
-	})
+	-- use({
+	-- 	"catppuccin/nvim",
+	-- 	as = "catppuccin",
+	-- 	config = function()
+	-- 		require("catppuccin").setup({})
+	-- 		vim.cmd("colorscheme catppuccin-macchiato")
+	-- 	end,
+	-- })
 
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -119,9 +121,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- use("p00f/nvim-ts-rainbow")
+	use("HiPhish/nvim-ts-rainbow2")
 
-	use("lukas-reineke/indent-blankline.nvim")
+	-- use("lukas-reineke/indent-blankline.nvim")
 
 	--GITHUB COPILOT
 	use("github/copilot.vim")

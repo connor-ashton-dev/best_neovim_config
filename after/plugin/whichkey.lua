@@ -146,6 +146,7 @@ local mappings = {
 	G = {
 		name = "Go",
 		r = { ":GoRun<CR>", "Run" },
+		b = { ":!go build<CR>", "Build" },
 	},
 	n = {
 		name = "Neovim",

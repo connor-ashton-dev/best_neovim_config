@@ -12,11 +12,11 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true,
 	indent = { enable = false },
 	-- indent = { enable = true, disable = { "javascript" } },
-	-- rainbow = {
-	-- 	enable = true,
-	-- 	extended_mode = true,
-	-- 	max_file_lines = nil,
-	-- },
+	rainbow = {
+		enable = true,
+		extended_mode = true,
+		max_file_lines = nil,
+	},
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
