@@ -94,8 +94,9 @@ return require("packer").startup(function(use)
 
 	--WINBAR
 	use({ "fgheng/winbar.nvim" })
-	--LIGHTSPEED
-	use("ggandor/lightspeed.nvim")
+	--Motions
+	-- use("ggandor/lightspeed.nvim")
+	use({ "folke/flash.nvim" })
 
 	--EDITOR STUFF
 	--autotag and pair

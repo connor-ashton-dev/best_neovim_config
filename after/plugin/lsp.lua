@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
 		"gopls",
 		"tailwindcss",
 		"cssls",
+		"sqlls",
 		"denols",
 		"eslint",
 		"clangd",
@@ -25,6 +26,11 @@ lspconfig.pyright.setup({
 })
 
 lspconfig.clangd.setup({
+	capabilities = capabilities,
+})
+
+lspconfig.sqlls.setup({
+	cmd = { "sql-language-server", "up", "--method", "stdio" },
 	capabilities = capabilities,
 })
 
