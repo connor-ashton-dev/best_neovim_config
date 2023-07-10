@@ -29,15 +29,16 @@ null_ls.setup({
 
 	sources = {
 		--[[ formatting.prettier.with({ extra_args = {  "--single-quote", "--jsx-single-quote" } }), ]]
-		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettierd.with({
+			extra_args = { "--single-quote", "--jsx-single-quote" },
+			extra_filetypes = { "svelte" },
+		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.astyle,
 		formatting.sql_formatter,
 		formatting.rustfmt,
 		formatting.stylua,
-		diagnostics.eslint.with({
-			only_local = "node_modules/.bin",
-		}),
+		diagnostics.eslint,
 		-- diagnostics.flake8
 	},
 })

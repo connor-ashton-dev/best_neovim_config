@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"gopls",
 		"tailwindcss",
+		"svelte",
 		"cssls",
 		"sqlls",
 		"denols",
@@ -22,6 +23,14 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 
 lspconfig.pyright.setup({
+	capabilities = capabilities,
+})
+
+lspconfig.emmet_language_server.setup({
+	capabilities = capabilities,
+})
+
+lspconfig.svelte.setup({
 	capabilities = capabilities,
 })
 
