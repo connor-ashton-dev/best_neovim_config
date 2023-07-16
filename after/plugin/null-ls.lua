@@ -38,7 +38,7 @@ null_ls.setup({
 		formatting.sql_formatter,
 		formatting.rustfmt,
 		formatting.stylua,
-		diagnostics.eslint,
+		-- diagnostics.eslint,
 		-- diagnostics.flake8
 	},
 })

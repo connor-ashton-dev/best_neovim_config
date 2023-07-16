@@ -38,6 +38,16 @@ lspconfig.clangd.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.eslint.setup({
+	--- ...
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
+	end,
+})
+
 lspconfig.sqlls.setup({
 	cmd = { "sql-language-server", "up", "--method", "stdio" },
 	capabilities = capabilities,
