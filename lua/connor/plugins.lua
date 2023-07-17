@@ -60,7 +60,8 @@ return require("packer").startup(function(use)
 	})
 
 	--CLOSE BUFFERS
-	use("moll/vim-bbye")
+	-- use("moll/vim-bbye")
+	use("famiu/bufdelete.nvim")
 
 	--WHICHKEY
 	use("folke/which-key.nvim")
@@ -123,7 +124,7 @@ return require("packer").startup(function(use)
 	-- 	end,
 	-- })
 
-	use("HiPhish/nvim-ts-rainbow2")
+	-- use("HiPhish/nvim-ts-rainbow2")
 
 	-- use("lukas-reineke/indent-blankline.nvim")
 
