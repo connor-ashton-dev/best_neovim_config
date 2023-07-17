@@ -36,8 +36,8 @@ return require("packer").startup(function(use)
 
 	-- use("navarasu/onedark.nvim")
 	-- use({ "ellisonleao/gruvbox.nvim" })
-	use({ "rose-pine/neovim", as = "rose-pine" })
-	-- use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use({ "rose-pine/neovim", as = "rose-pine" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	-- use({
 	-- 	"catppuccin/nvim",
 	-- 	as = "catppuccin",
