@@ -23,7 +23,6 @@ return require("packer").startup(function(use)
 			"nvim-tree/nvim-web-devicons", -- optional
 		},
 	})
-
 	-- use({
 	-- 	"nvim-telescope/telescope-file-browser.nvim",
 	-- 	requires = {
@@ -112,6 +111,14 @@ return require("packer").startup(function(use)
 	use({
 		"kylechui/nvim-surround",
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+	})
+
+	-- escape with jk or jj without delay
+	use({
+		"max397574/better-escape.nvim",
+		config = function()
+			require("better_escape").setup()
+		end,
 	})
 
 	--view pictures
