@@ -96,6 +96,7 @@ local mappings = {
 			e = { ":Copilot enable<CR>", "Enable Copilot" },
 			d = { ":Copilot disable<CR>", "Disable Copilot" },
 			s = { ":Copilot status<CR>", "Copilot Status" },
+			p = { ":Copilot panel<CR>", "Copilot Panel" },
 		},
 	},
 	-- d = {
@@ -155,6 +156,12 @@ local mappings = {
 			a = { ":bufdo :e!<CR>", "Reload All Buffers" },
 			o = { ":e!<CR>", "Reload Current Buffer" },
 		},
+	},
+	o = {
+		name = "Obsidian",
+		s = { ":ObsidianQuickSwitch<CR>", "Search For File" },
+		o = { ":ObsidianOpen<CR>", "Open File" },
+		n = { "ObsidianNew", "New File" },
 	},
 	f = {
 		name = "File",

@@ -186,5 +186,12 @@ return require("packer").startup(function(use)
 	--TMUX navigation
 	use("alexghergh/nvim-tmux-navigation")
 
+	use("epwalsh/obsidian.nvim")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 	--end of everything
 end)

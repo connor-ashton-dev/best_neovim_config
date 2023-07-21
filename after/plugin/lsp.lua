@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
 		"denols",
 		"eslint",
 		"clangd",
+		"marksman",
 		-- "rust_analyzer",
 	},
 })
@@ -23,6 +24,10 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 
 lspconfig.pyright.setup({
+	capabilities = capabilities,
+})
+
+lspconfig.marksman.setup({
 	capabilities = capabilities,
 })
 
@@ -55,15 +60,6 @@ lspconfig.sqlls.setup({
 
 lspconfig.gopls.setup({
 	capabilities = capabilities,
-	-- settings = {
-	-- 	gopls = {
-	-- 		-- experimentalWorkspaceModule = true,
-	-- 		-- analyses = {
-	-- 		-- 	unusedparams = true,
-	-- 		-- },
-	-- 		-- staticcheck = true,
-	-- 	},
-	-- },
 })
 lspconfig.tsserver.setup({
 	capabilities = capabilities,
