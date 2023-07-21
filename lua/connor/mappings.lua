@@ -92,3 +92,7 @@ vim.keymap.set("n", "<leader>fs", builtin.spell_suggest, opts)
 vim.keymap.set("n", "<leader>vh", builtin.command_history, opts)
 vim.keymap.set("n", "<leader>fo", builtin.oldfiles, opts)
 vim.keymap.set("n", "<leader>vo", builtin.vim_options, opts)
+
+vim.keymap.set("v", "cr", "<Plug>SnipRun", opts)
+vim.keymap.set("n", "<leader>co", "<Plug>SnipRunOperator", opts)
+vim.keymap.set("n", "<leader>cr", "<Plug>SnipRun", opts)

@@ -190,6 +190,10 @@ local mappings = {
 			"<cmd>lua require('telescope.builtin').spell_suggest()<cr>",
 			"Spellcheck",
 		},
+		c = {
+			"<Plug>SnipRun<CR>",
+			"Run Code",
+		},
 		o = {
 			"<cmd>lua require('telescope.builtin').oldfiles()<cr>",
 			"Old Files",
