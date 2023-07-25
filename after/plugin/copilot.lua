@@ -1,11 +1,3 @@
--- let g:copilot_filetypes = {
---       \ 'markdown': v:true,
---       \ 'tex': v:true,
---       \ }
---
--- imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
--- let g:copilot_no_tab_map = v:true
-
 vim.g.copilot_filetypes = {
 	markdown = true,
 	tex = true,
