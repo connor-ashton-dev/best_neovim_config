@@ -12,15 +12,15 @@ flash.setup({
 		wrap = true,
 		---@type Flash.Pattern.Mode
 		-- Each mode will take ignorecase and smartcase into account.
-		-- * exact: exact match
-		-- * search: regular search
-		-- * fuzzy: fuzzy search
-		-- * fun(str): custom function that returns a pattern
+		--  exact: exact match
+		--  search: regular search
+		--  fuzzy: fuzzy search
+		--  fun(str): custom function that returns a pattern
 		--   For example, to only match at the beginning of a word:
-		mode = function(str)
-			return "\\<" .. str
-		end,
-		-- mode = "exact",
+		--   mode = function(str)
+		--     return "\\<" .. str
+		--   end,
+		mode = "exact",
 		-- behave like `incsearch`
 		incremental = false,
 		-- Excluded filetypes and custom window filters
@@ -42,7 +42,7 @@ flash.setup({
 		-- max pattern length. If the pattern length is equal to this
 		-- labels will no longer be skipped. When it exceeds this length
 		-- it will either end in a jump or terminate the search
-		max_length = nil, ---@type number?
+		max_length = false, ---@type number|false
 	},
 	jump = {
 		-- save location in the jumplist
@@ -82,7 +82,7 @@ flash.setup({
 		style = "overlay", ---@type "eol" | "overlay" | "right_align" | "inline"
 		-- flash tries to re-use labels that were already assigned to a position,
 		-- when typing more characters. By default only lower-case labels are re-used.
-		reuse = "lowercase", ---@type "lowercase" | "all"
+		reuse = "lowercase", ---@type "lowercase" | "all" | "none"
 		-- for the current window, label targets closer to the cursor first
 		distance = true,
 		-- minimum pattern length to show labels
@@ -93,7 +93,7 @@ flash.setup({
 		rainbow = {
 			enabled = false,
 			-- number between 1 and 9
-			shade = 9,
+			shade = 5,
 		},
 		-- With `format`, you can change how the label is rendered.
 		-- Should return a list of `[text, highlight]` tuples.
@@ -224,7 +224,7 @@ flash.setup({
 	-- for regular jumps
 	prompt = {
 		enabled = true,
-		prefix = { { "⚡", "FlashPromptIcon" } },
+		prefix = { { "", "FlashPromptIcon" } },
 		win_config = {
 			relative = "editor",
 			width = 1, -- when <=1 it's a percentage of the editor width
