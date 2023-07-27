@@ -6,6 +6,8 @@ end
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
 	"                                                     ",
+	"                                                     ",
+	"                                                     ",
 	"  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
 	"  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
 	"  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
@@ -24,8 +26,8 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
-local fortune = require("alpha.fortune")
-dashboard.section.footer.val = fortune()
+-- local fortune = require("alpha.fortune")
+-- dashboard.section.footer.val = fortune()
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
