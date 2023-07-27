@@ -21,12 +21,19 @@ local plugins = {
 		version = "0.1.1",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
+	"ahmedkhalf/project.nvim",
 	--FILE BROWSERS
 	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
+	},
+
+	{
+		"goolord/alpha-nvim",
+		event = "VimEnter",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
@@ -130,7 +137,6 @@ local plugins = {
 	},
 
 	{ "michaelb/sniprun", build = "sh ./install.sh" },
-
 	--RUST STUFF
 	"simrat39/rust-tools.nvim",
 
