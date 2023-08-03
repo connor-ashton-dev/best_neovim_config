@@ -99,7 +99,13 @@ local plugins = {
 	},
 
 	"windwp/nvim-ts-autotag",
-
+	{
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 	{
 		"kylechui/nvim-surround",
 		version = "*", --  for stability; omit to  `main` branch for the latest features
