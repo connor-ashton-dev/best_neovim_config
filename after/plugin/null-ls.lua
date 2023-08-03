@@ -30,7 +30,7 @@ null_ls.setup({
 	sources = {
 		--[[ formatting.prettier.with({ extra_args = {  "--single-quote", "--jsx-single-quote" } }), ]]
 		formatting.prettierd.with({
-			extra_args = { "--single-quote", "--jsx-single-quote" },
+			extra_args = { "--double-quote", "--jsx-double-quote" },
 			extra_filetypes = { "svelte" },
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
