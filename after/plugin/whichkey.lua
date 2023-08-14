@@ -112,6 +112,7 @@ local mappings = {
 		name = "View",
 		c = { ":TodoTelescope<CR>", "View Comments" },
 		e = { ":TroubleToggle<CR>", "View Errors" },
+		d = { "<cmd>lua require('telescope.builtin').diagnostics()<cr>", "View Diagnostics" },
 		--get next diagnostic
 		l = { ":set relativenumber!<CR>", "Toggle Relative Line Numbers" },
 		k = {
@@ -139,12 +140,8 @@ local mappings = {
 	},
 	r = {
 		name = "Rust",
-		r = { ":RustRun<CR>", "Run" },
-		c = {
-			name = "Cargo",
-			r = { ":! cargo run<CR>", "Run" },
-			c = { ":! cargo check<CR>", "Check" },
-		},
+		r = { ":! cargo run<CR>", "Run" },
+		c = { ":! cargo check<CR>", "Check" },
 	},
 	G = {
 		name = "Go",
@@ -172,13 +169,17 @@ local mappings = {
 			":Telescope find_files<CR>",
 			"Find Files",
 		},
-		-- g = {
-		-- 	"<cmd>lua require('telescope.builtin').git_files()<cr>",
-		-- 	"Git Files",
-		-- },
+		g = {
+			"<cmd>lua require('telescope.builtin').git_files()<cr>",
+			"Git Files",
+		},
 		t = {
 			"<cmd>lua require('telescope.builtin').live_grep()<cr>",
 			"Grep Text",
+		},
+		h = {
+			"<cmd>lua require('telescope.builtin').man_pages()<cr>",
+			"Man Pages",
 		},
 		r = {
 			"<cmd>lua require('telescope.builtin').lsp_references()<cr>",

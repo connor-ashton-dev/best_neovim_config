@@ -2,7 +2,7 @@
 local cmp = require("cmp")
 
 local kind_icons = {
-	Text = "",
+	Text = "",
 	Method = "m",
 	Function = "",
 	Constructor = "",

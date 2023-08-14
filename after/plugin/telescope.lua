@@ -9,12 +9,25 @@ require("telescope").setup({
 		find_files = {
 			theme = "dropdown",
 			previewer = false,
+			hidden = true,
 			prompt_title = "All Files",
 		},
+
 		git_files = {
 			theme = "dropdown",
 			previewer = false,
 			prompt_title = "Git Files",
+		},
+		spell_suggest = {
+			theme = "cursor",
+			-- previewer = false,
+			prompt_title = "Spelling Suggestions",
+		},
+
+		treesitter = {
+			theme = "ivy",
+			-- previewer = true,
+			prompt_title = "Variables",
 		},
 	},
 	extensions = {
