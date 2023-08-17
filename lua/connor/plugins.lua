@@ -42,7 +42,7 @@ local plugins = {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
 	},
-
+	"lewis6991/gitsigns.nvim",
 	--TREESITTER
 	{
 		"nvim-treesitter/nvim-treesitter",
