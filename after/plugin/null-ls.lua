@@ -37,10 +37,11 @@ null_ls.setup({
 		formatting.astyle,
 		formatting.gofmt,
 		formatting.sql_formatter,
+		formatting.dart_format,
 		formatting.rustfmt,
 		formatting.stylua,
-		-- diagnostics.eslint,
+		diagnostics.eslint,
 		diagnostics.flake8,
-		diagnostics.golangci_lint,
+		-- diagnostics.golangci_lint,
 	},
 })

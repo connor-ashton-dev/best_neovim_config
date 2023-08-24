@@ -52,16 +52,6 @@ keymap("n", "<leader>bc", ":Bdelete<CR>", opts)
 keymap("n", "<leader>bp", ":bprevious<CR>", opts)
 keymap("n", "<leader>bn", ":bnext<CR>", opts)
 
--- go into normal mode
--- keymap("i", "LL", "<ESC>", opts)
--- keymap("v", "LL", "<ESC>", opts)
-
---Easier window navigation
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)

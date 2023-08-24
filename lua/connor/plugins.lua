@@ -37,6 +37,8 @@ local plugins = {
 	},
 
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	-- { "ellisonleao/gruvbox.nvim", priority = 1000 },
+	-- { "rose-pine/neovim", name = "rose-pine" },
 
 	{
 		"nvim-lualine/lualine.nvim",
@@ -90,7 +92,22 @@ local plugins = {
 	--Motions
 	-- "ggandor/lightspeed.nvim"
 	{ "folke/flash.nvim" },
-
+	-- lazy.nvim
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		-- add any options here
+	-- 	},
+	-- 	dependencies = {
+	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		-- OPTIONAL:
+	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
+	-- 		--   If not available, we use `mini` as the fallback
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- },
 	--EDITOR STUFF
 	--autoversion and pair
 	{
@@ -140,6 +157,11 @@ local plugins = {
 		"folke/trouble.nvim",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		opts = {},
+		{
+			"nvim-neorg/neorg",
+			build = ":Neorg sync-parsers",
+			dependencies = { "nvim-lua/plenary.nvim" },
+		},
 	},
 
 	{ "michaelb/sniprun", build = "sh ./install.sh" },
@@ -156,5 +178,18 @@ local plugins = {
 	"epwalsh/obsidian.nvim",
 
 	"iamcco/markdown-preview.nvim",
+
+	--FLUTTER
+	{
+		"akinsho/flutter-tools.nvim",
+		lazy = false,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+		config = true,
+	},
+
+	"reisub0/hot-reload.vim",
 }
 require("lazy").setup(plugins, {})

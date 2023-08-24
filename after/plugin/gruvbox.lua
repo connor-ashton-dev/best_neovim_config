@@ -1,40 +1,19 @@
--- -- setup must be called before loading the colorscheme
--- -- Default options:
--- require("gruvbox").setup({
--- 	undercurl = false,
--- 	underline = false,
--- 	bold = true,
--- 	italic = {
--- 		strings = false,
--- 		comments = false,
--- 		operators = false,
--- 		folds = false,
--- 	},
--- 	strikethrough = true,
--- 	invert_selection = false,
--- 	invert_signs = false,
--- 	invert_tabline = false,
--- 	invert_intend_guides = false,
--- 	inverse = true, -- invert background for search, diffs, statuslines and errors
--- 	contrast = "", -- can be "hard", "soft" or empty string
--- 	palette_overrides = {},
--- 	overrides = {},
--- 	dim_inactive = false,
--- 	transparent_mode = true,
--- })
+-- setup must be called before loading the colorscheme
+-- Default options:
+-- require("gruvbox").setup({})
 -- vim.cmd("colorscheme gruvbox")
---
--- -- vim.cmd([[highlight! link CmpItemAbbrMatchFuzzy Aqua]])
--- -- vim.cmd([[highlight! link CmpItemKindText Fg]])
--- -- vim.cmd([[highlight! link CmpItemKindMethod Purple]])
--- -- vim.cmd([[highlight! link CmpItemKindFunction Purple]])
--- -- vim.cmd([[highlight! link CmpItemKindConstructor Green]])
--- -- vim.cmd([[highlight! link CmpItemKindField Aqua]])
--- -- vim.cmd([[highlight! link CmpItemKindVariable Blue]])
--- -- vim.cmd([[highlight! link CmpItemKindClass Green]])
--- -- vim.cmd([[highlight! link CmpItemKindInterface Green]])
--- -- vim.cmd([[highlight! link CmpItemKindValue Orange]])
--- -- vim.cmd([[highlight! link CmpItemKindKeyword Keyword]])
--- -- vim.cmd([[highlight! link CmpItemKindSnippet Red]])
--- -- vim.cmd([[highlight! link CmpItemKindFile Orange]])
--- -- vim.cmd([[highlight! link CmpItemKindFolder Orange]])
+
+-- vim.cmd([[highlight! link CmpItemAbbrMatchFuzzy Aqua]])
+-- vim.cmd([[highlight! link CmpItemKindText Fg]])
+-- vim.cmd([[highlight! link CmpItemKindMethod Purple]])
+-- vim.cmd([[highlight! link CmpItemKindFunction Purple]])
+-- vim.cmd([[highlight! link CmpItemKindConstructor Green]])
+-- vim.cmd([[highlight! link CmpItemKindField Aqua]])
+-- vim.cmd([[highlight! link CmpItemKindVariable Blue]])
+-- vim.cmd([[highlight! link CmpItemKindClass Green]])
+-- vim.cmd([[highlight! link CmpItemKindInterface Green]])
+-- vim.cmd([[highlight! link CmpItemKindValue Orange]])
+-- vim.cmd([[highlight! link CmpItemKindKeyword Keyword]])
+-- vim.cmd([[highlight! link CmpItemKindSnippet Red]])
+-- vim.cmd([[highlight! link CmpItemKindFile Orange]])
+-- vim.cmd([[highlight! link CmpItemKindFolder Orange]])
