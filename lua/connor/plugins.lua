@@ -71,7 +71,9 @@ local plugins = {
 	{
 		"williamboman/mason.nvim",
 	},
-
+	{
+		"mrshmllow/document-color.nvim",
+	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
