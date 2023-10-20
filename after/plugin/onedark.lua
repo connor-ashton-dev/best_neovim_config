@@ -1,7 +1,5 @@
 -- require("onedark").setup({
--- 	style = "darker",
--- 	lualine = {
--- 		transparent = true, -- lualine center bar transparency
--- 	},
+-- 	transparent = false,
+-- 	dark_float = true,
 -- })
--- require("onedark").load()
+-- 	colors = {},

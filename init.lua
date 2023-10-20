@@ -1,1 +1,1 @@
-require("connor")
+require("nvim-config")

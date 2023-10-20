@@ -83,12 +83,16 @@ local opts = {
 
 local mappings = {
 	["e"] = { ":NvimTreeToggle<CR>", "Explorer" },
-	["D"] = { ":! pwd<CR>", "PWD" },
+	["d"] = { ":! pwd<CR>", "PWD" },
 	["w"] = { ":w<CR>", "Save" },
 	["q"] = { ":conf q<CR>", "Close File" },
 	["L"] = { ":conf qa<CR>", "Leave" },
 	["K"] = { ":xa!<CR>", "Save and quit" },
 	["u"] = { ":UndotreeToggle<CR>", "UndoTree" },
+	["r"] = {
+		":YabsDefaultTask<CR>",
+		"Run Code",
+	},
 	g = {
 		name = "Git",
 		g = { ":LazyGit<CR>", "LazyGit" },
@@ -137,11 +141,6 @@ local mappings = {
 			"<cmd>lua require('telescope.builtin').buffers()<cr>",
 			"List",
 		},
-	},
-	r = {
-		name = "Rust",
-		r = { ":! cargo run<CR>", "Run" },
-		c = { ":! cargo check<CR>", "Check" },
 	},
 	G = {
 		name = "Go",
@@ -193,9 +192,9 @@ local mappings = {
 			"<cmd>lua require('telescope.builtin').spell_suggest()<cr>",
 			"Spellcheck",
 		},
-		c = {
-			"<Plug>SnipRun<CR>",
-			"Run Code",
+		a = {
+			"<cmd>lua local task = vim.fn.input('Enter task name: '); vim.cmd(':YabsTask ' .. task)<cr>",
+			"File actions(Yabs)",
 		},
 		o = {
 			"<cmd>lua require('telescope.builtin').oldfiles()<cr>",

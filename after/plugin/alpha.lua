@@ -4,7 +4,43 @@ if not status_ok then
 end
 
 local dashboard = require("alpha.themes.dashboard")
+local date_time = os.date("%Y-%m-%d %H:%M:%S")
+local formatted_date = " " .. os.date("%A, %B %d")
+local function get_weather(city, api_key)
+	local handle = io.popen(
+		"curl -s 'http://api.openweathermap.org/data/2.5/weather?q="
+			.. city
+			.. "&appid="
+			.. api_key
+			.. "&units=imperial'"
+	)
+	local result = handle:read("*a")
+	handle:close()
+
+	local weather_data = vim.fn.json_decode(result)
+	if weather_data and weather_data.main and weather_data.main.temp then
+		return " " .. city .. ": " .. weather_data.main.temp .. "°F"
+	else
+		return "Unable to fetch weather"
+	end
+end
+
+local function get_battery_macos()
+	local handle = io.popen("pmset -g batt")
+	local result = handle:read("*a")
+	handle:close()
+
+	local percentage = result:match("([0-9]+%%)")
+	if percentage then
+		return "󰂂 " .. percentage
+	else
+		return "Unable to fetch battery info"
+	end
+end
+
 dashboard.section.header.val = {
+	"                                                     ",
+	"                                                     ",
 	"                                                     ",
 	"                                                     ",
 	"                                                     ",
@@ -16,21 +52,26 @@ dashboard.section.header.val = {
 	"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
 	"                                                     ",
 }
+
 dashboard.section.buttons.val = {
-	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
+	-- ["e"] = { ":NvimTreeToggle<CR>", "Explorer" },
+	dashboard.button("f", "  Search", ":Telescope find_files <CR>"),
+	dashboard.button("e", "  Explorer", ":NvimTreeToggle<CR>"),
+	-- dashboard.button("p", "󰣪  Project", ":Telescope projects <CR>"),
+	dashboard.button("r", "󰥔  Recents", ":Telescope oldfiles <CR>"),
 	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
-	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+	dashboard.button("q", "󱠡  Quit Neovim", ":qa<CR>"),
 }
 
--- local fortune = require("alpha.fortune")
--- dashboard.section.footer.val = fortune()
-dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Include"
-dashboard.section.buttons.opts.hl = "Keyword"
+dashboard.section.footer.val = {
+	"",
+	"",
+	"",
+	formatted_date .. " | " .. get_battery_macos() .. " | " .. get_weather("Provo", "0074c776238afb9f7277773cc5cbc742"),
+}
+dashboard.section.buttons.opts.hl = "Number"
+dashboard.section.header.opts.hl = "Type"
+dashboard.section.footer.opts.hl = "Number"
 
 dashboard.opts.opts.noautocmd = true
 -- vim.cmd([[autocmd User AlphaReady echo 'ready']])

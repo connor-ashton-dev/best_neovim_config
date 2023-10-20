@@ -36,6 +36,7 @@ cmp.setup({
 			require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
+
 	mapping = {
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 		["<C-n>"] = cmp.mapping.select_next_item(),

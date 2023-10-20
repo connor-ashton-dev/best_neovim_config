@@ -18,10 +18,12 @@ local plugins = {
 	--TELESCOPE
 	{
 		"nvim-telescope/telescope.nvim",
-		version = "0.1.1",
+		branch = "0.1.x",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
+
 	"ahmedkhalf/project.nvim",
+
 	--FILE BROWSERS
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -36,15 +38,19 @@ local plugins = {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	-- { "ful1e5/onedark.nvim", name = "onedark", priority = 1000 },
 	-- { "ellisonleao/gruvbox.nvim", priority = 1000 },
+	{ "Mofiqul/vscode.nvim", priority = 1000 },
 	-- { "rose-pine/neovim", name = "rose-pine" },
 
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
 	},
+
 	"lewis6991/gitsigns.nvim",
+
 	--TREESITTER
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -71,9 +77,9 @@ local plugins = {
 	{
 		"williamboman/mason.nvim",
 	},
-	{
-		"mrshmllow/document-color.nvim",
-	},
+	-- {
+	-- 	"mrshmllow/document-color.nvim",
+	-- },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
@@ -92,8 +98,13 @@ local plugins = {
 	--WINBAR
 	{ "fgheng/winbar.nvim" },
 	--Motions
-	-- "ggandor/lightspeed.nvim"
-	{ "folke/flash.nvim" },
+	"ggandor/lightspeed.nvim",
+	-- { "folke/flash.nvim" },
+	-- {
+	-- 	"m4xshen/hardtime.nvim",
+	-- 	dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+	-- 	-- opts = {},
+	-- },
 	-- lazy.nvim
 	-- {
 	-- 	"folke/noice.nvim",
@@ -146,7 +157,6 @@ local plugins = {
 
 	--comments
 	"numToStr/Comment.nvim",
-
 	"JoosepAlviste/nvim-ts-context-commentstring",
 
 	{
@@ -166,7 +176,11 @@ local plugins = {
 		},
 	},
 
-	{ "michaelb/sniprun", build = "sh ./install.sh" },
+	-- { "michaelb/sniprun", build = "sh ./install.sh" },
+	{
+		"pianocomposer321/yabs.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	--RUST STUFF
 	"simrat39/rust-tools.nvim",
 
@@ -193,5 +207,6 @@ local plugins = {
 	},
 
 	"reisub0/hot-reload.vim",
+	"mfussenegger/nvim-jdtls",
 }
 require("lazy").setup(plugins, {})
