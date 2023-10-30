@@ -73,6 +73,7 @@ local plugins = {
 
 	-- Vim Fugitive
 	"tpope/vim-fugitive",
+
 	--	LSP STUFF
 	{
 		"williamboman/mason.nvim",
@@ -84,6 +85,7 @@ local plugins = {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	},
+
 	--Completion
 	"hrsh7th/nvim-cmp", -- The completion plugin
 	"hrsh7th/cmp-buffer", -- buffer completions

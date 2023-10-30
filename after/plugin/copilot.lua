@@ -1,3 +1,4 @@
+vim.cmd(":Copilot disable")
 vim.g.copilot_filetypes = {
 	markdown = true,
 	tex = true,

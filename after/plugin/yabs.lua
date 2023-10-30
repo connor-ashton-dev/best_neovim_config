@@ -24,7 +24,35 @@ require("yabs"):setup({
 				},
 			},
 		},
-
+		go = {
+			default_task = "build_and_run",
+			tasks = {
+				build = {
+					command = "go build %", -- Build the current Go package
+					output = "quickfix", -- Show build errors in quickfix list
+					opts = {
+						open_on_run = "auto", -- Open the quickfix list
+						-- automatically when the task finishes
+					},
+				},
+				run = {
+					command = "go run %", -- Run the current Go file
+					output = "terminal", -- Show output in the terminal
+				},
+				build_and_run = {
+					command = function()
+						require("yabs"):run_task("build", {
+							on_exit = function(_, exit_code)
+								if exit_code == 0 then
+									require("yabs").languages.go:run_task("run")
+								end
+							end,
+						})
+					end,
+					type = "lua",
+				},
+			},
+		},
 		java = {
 			default_task = "build_and_run",
 			tasks = {
