@@ -22,7 +22,7 @@ local plugins = {
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 
-	"ahmedkhalf/project.nvim",
+	-- "ahmedkhalf/project.nvim",
 
 	--FILE BROWSERS
 	{
@@ -37,6 +37,7 @@ local plugins = {
 		event = "VimEnter",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	-- { "lewis6991/impatient.nvim" },
 
 	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	-- { "ful1e5/onedark.nvim", name = "onedark", priority = 1000 },
@@ -49,7 +50,7 @@ local plugins = {
 		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
 	},
 
-	"lewis6991/gitsigns.nvim",
+	-- "lewis6991/gitsigns.nvim",
 
 	--TREESITTER
 	{
@@ -72,7 +73,7 @@ local plugins = {
 	"mbbill/undotree",
 
 	-- Vim Fugitive
-	"tpope/vim-fugitive",
+	-- "tpope/vim-fugitive",
 
 	--	LSP STUFF
 	{
@@ -144,10 +145,10 @@ local plugins = {
 	},
 
 	-- escape with jk or jj without delay
-	{
-		"max397574/better-escape.nvim",
-		opts = {},
-	},
+	-- {
+	-- 	"max397574/better-escape.nvim",
+	-- 	opts = {},
+	-- },
 
 	-- "HiPhish/nvim-ts-rainbow2"
 	"HiPhish/rainbow-delimiters.nvim",
