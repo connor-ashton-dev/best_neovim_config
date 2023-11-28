@@ -5,10 +5,6 @@ require("nvim-treesitter.configs").setup({
 	autotag = {
 		enable = true,
 	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
 	auto_install = true,
 	indent = { enable = false },
 	-- indent = { enable = true, disable = { "javascript" } },
@@ -22,3 +18,6 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = { "markdown" },
 	},
 })
+
+require("ts_context_commentstring").setup({})
+vim.g.skip_ts_context_commentstring_module = true

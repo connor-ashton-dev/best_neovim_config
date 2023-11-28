@@ -23,15 +23,6 @@ local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- local util = require("lspconfig/util")
 
-local on_attach = function(client)
-	if client.server_capabilities.colorProvider then
-		-- Attach document colour support
-		require("document-color").buf_attach(bufnr)
-	end
-end
-
-local border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
-
 lspconfig.pyright.setup({
 	capabilities = capabilities,
 })
@@ -94,47 +85,54 @@ lspconfig.lua_ls.setup({
 		},
 	},
 })
-lspconfig.tailwindcss.setup({ capabilities = capabilities, on_attach = on_attach })
+lspconfig.tailwindcss.setup({ capabilities = capabilities })
 lspconfig.pyright.setup({ capabilities = capabilities })
 lspconfig.jsonls.setup({ capabilities = capabilities })
 
--- lspconfig.rust_analyzer.setup({
--- 	capabilities = capabilities,
--- 	filetypes = { "rust" },
--- 	root_dir = util.root_pattern("Cargo.toml"),
--- 	settings = {
--- 		["rust_analyzer"] = {
--- 			cargo = {
--- 				allFeature = true,
--- 			},
--- 		},
--- 	},
--- })
-
-vim.diagnostic.config({
-	virtual_text = false,
-	update_in_insert = true,
-	signs = true,
-	float = {
-		border = "single",
-		-- format = function(diagnostic)
-		--   return string.format("%s (%s) [%s]", diagnostic.message, diagnostic.source, diagnostic.user_data.lsp.code)
-		-- end,
-	},
+lspconfig.rust_analyzer.setup({
+	capabilities = capabilities,
 })
 
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-	opts = opts or {}
-	opts.border = opts.border or border
-	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+local signs = {
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "󰍉" },
+	{ name = "DiagnosticSignInfo", text = " " },
+}
+
+for _, sign in ipairs(signs) do
+	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
-local signs = { Error = "", Warn = "", Hint = "󰍉", Info = " " }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+local config = {
+	-- disable virtual text
+	virtual_text = true,
+	-- show signs
+	signs = {
+		active = signs,
+	},
+	update_in_insert = true,
+	underline = true,
+	severity_sort = true,
+	float = {
+		focusable = true,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
+}
+
+vim.diagnostic.config(config)
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "rounded",
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = "rounded",
+})
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),

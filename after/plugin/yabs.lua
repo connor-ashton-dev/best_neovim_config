@@ -128,6 +128,37 @@ require("yabs"):setup({
 				},
 			},
 		},
+		rust = {
+			default_task = "run",
+			tasks = {
+				build = {
+					command = "cargo build",
+					output = "terminal",
+				},
+				run = {
+					command = "cargo run",
+					output = "terminal",
+				},
+				check = {
+					command = "cargo check",
+					output = "quickfix",
+					opts = {
+						open_on_run = "auto",
+					},
+				},
+				release = {
+					command = "cargo build --release",
+					output = "quickfix",
+					opts = {
+						open_on_run = "auto",
+					},
+				},
+				doc = {
+					command = "cargo doc --open",
+					output = "terminal",
+				},
+			},
+		},
 	},
 	tasks = { -- Same values as `language.tasks`, but global
 		build = {

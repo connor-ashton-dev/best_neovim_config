@@ -184,8 +184,6 @@ local plugins = {
 		"pianocomposer321/yabs.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-	--RUST STUFF
-	"simrat39/rust-tools.nvim",
 
 	"mfussenegger/nvim-dap",
 
