@@ -97,6 +97,9 @@ nvim_tree.setup({
 			quit_on_open = true,
 		},
 	},
+	filters = {
+		custom = { ".git" },
+	},
 	view = {
 		width = 35,
 		--[[ height = 30, ]]
