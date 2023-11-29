@@ -81,6 +81,12 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
+local function toggle_virtual_text()
+	local current_config = vim.diagnostic.config()
+	current_config.virtual_text = not current_config.virtual_text
+	vim.diagnostic.config(current_config)
+end
+
 local mappings = {
 	["e"] = { ":NvimTreeToggle<CR>", "Explorer" },
 	["d"] = { ":! pwd<CR>", "PWD" },
@@ -112,6 +118,10 @@ local mappings = {
 	-- 	--get previous diagnostic
 	-- 	p = { "<cmd>lua vim.diagnostic.goto_prev({float = true})<CR>", "Previous Diagnostic" },
 	-- },
+	l = {
+		name = "LSP",
+		t = { toggle_virtual_text, "Toggle Virtual Text" },
+	},
 	v = {
 		name = "View",
 		c = { ":TodoTelescope<CR>", "View Comments" },
