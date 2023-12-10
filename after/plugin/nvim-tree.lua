@@ -98,7 +98,10 @@ nvim_tree.setup({
 		},
 	},
 	filters = {
-		custom = { ".git" },
+		custom = {
+			".git", -- This regex should match only .git directories
+		},
+		exclude = { ".gitignore" },
 	},
 	view = {
 		width = 35,

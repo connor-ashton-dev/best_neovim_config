@@ -23,6 +23,7 @@ local plugins = {
 	},
 
 	-- "ahmedkhalf/project.nvim",
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 
 	--FILE BROWSERS
 	{
@@ -42,7 +43,8 @@ local plugins = {
 	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	-- { "ful1e5/onedark.nvim", name = "onedark", priority = 1000 },
 	-- { "ellisonleao/gruvbox.nvim", priority = 1000 },
-	{ "Mofiqul/vscode.nvim", priority = 1000 },
+	-- { "Mofiqul/vscode.nvim", priority = 1000 },
+	{ "Mofiqul/dracula.nvim" },
 	-- { "rose-pine/neovim", name = "rose-pine" },
 
 	{
@@ -154,7 +156,7 @@ local plugins = {
 	"HiPhish/rainbow-delimiters.nvim",
 
 	--GITHUB COPILOT
-	"github/copilot.vim",
+	-- "github/copilot.vim",
 	--null-ls for formatting
 	"jose-elias-alvarez/null-ls.nvim",
 
@@ -172,11 +174,6 @@ local plugins = {
 		"folke/trouble.nvim",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		opts = {},
-		{
-			"nvim-neorg/neorg",
-			build = ":Neorg sync-parsers",
-			dependencies = { "nvim-lua/plenary.nvim" },
-		},
 	},
 
 	-- { "michaelb/sniprun", build = "sh ./install.sh" },

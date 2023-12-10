@@ -1,6 +1,6 @@
 require("lualine").setup({
 	options = {
-		theme = "vscode",
+		theme = "dracula-nvim",
 		disabled_filetypes = { "NvimTree", "packer", "alpha" },
 	},
 })

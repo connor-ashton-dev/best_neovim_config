@@ -25,31 +25,25 @@ require("yabs"):setup({
 			},
 		},
 		go = {
-			default_task = "build_and_run",
+			default_task = "run",
 			tasks = {
 				build = {
 					command = "go build %", -- Build the current Go package
-					output = "quickfix", -- Show build errors in quickfix list
-					opts = {
-						open_on_run = "auto", -- Open the quickfix list
-						-- automatically when the task finishes
-					},
+					output = function()
+						vim.cmd([[1TermExec cmd="go build"]])
+					end,
 				},
 				run = {
 					command = "go run %", -- Run the current Go file
-					output = "terminal", -- Show output in the terminal
+					output = function()
+						vim.cmd([[1TermExec cmd="go run ."]])
+					end,
 				},
 				build_and_run = {
-					command = function()
-						require("yabs"):run_task("build", {
-							on_exit = function(_, exit_code)
-								if exit_code == 0 then
-									require("yabs").languages.go:run_task("run")
-								end
-							end,
-						})
+					command = "go build .; go run .", -- Run the current Go file
+					output = function()
+						vim.cmd([[1TermExec cmd="go build . && go run ."]])
 					end,
-					type = "lua",
 				},
 			},
 		},
@@ -132,26 +126,40 @@ require("yabs"):setup({
 			default_task = "run",
 			tasks = {
 				build = {
-					command = "cargo build",
-					output = "terminal",
+					command = "",
+					output = function()
+						vim.cmd([[1TermExec cmd="cargo build"]])
+					end,
 				},
 				run = {
-					command = "cargo run",
-					output = "terminal",
+					command = "",
+					output = function()
+						vim.cmd([[1TermExec cmd="cargo run"]])
+					end,
 				},
 				check = {
-					command = "cargo check",
-					output = "quickfix",
-					opts = {
-						open_on_run = "auto",
-					},
+					command = "",
+					output = function()
+						vim.cmd([[1TermExec cmd="cargo check"]])
+					end,
+				},
+				test = {
+					command = "",
+					output = function()
+						vim.cmd([[1TermExec cmd="cargo test"]])
+					end,
 				},
 				release = {
-					command = "cargo build --release",
-					output = "quickfix",
-					opts = {
-						open_on_run = "auto",
-					},
+					command = "",
+					output = function()
+						vim.cmd([[1TermExec cmd="cargo build --release"]])
+					end,
+				},
+				lint = {
+					command = "",
+					output = function()
+						vim.cmd([[1TermExec cmd="cargo clippy"]])
+					end,
 				},
 				doc = {
 					command = "cargo doc --open",

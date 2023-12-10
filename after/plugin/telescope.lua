@@ -7,7 +7,7 @@ require("telescope").setup({
 
 	pickers = {
 		find_files = {
-			find_command = { "rg", "--files", "--hidden", "-g", "!.git", "-g", "!node_modules/*" },
+			find_command = { "rg", "--files", "--hidden", "-g", "!.git", "-g", "!node_modules/*", "-g", "!target/*" },
 			-- theme = "dropdown",
 			-- previewer = false,
 			-- no_ignore = true,

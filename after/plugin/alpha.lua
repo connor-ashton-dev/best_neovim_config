@@ -6,24 +6,6 @@ end
 local dashboard = require("alpha.themes.dashboard")
 local date_time = os.date("%Y-%m-%d %H:%M:%S")
 local formatted_date = " " .. os.date("%A, %B %d")
-local function get_weather(city, api_key)
-	local handle = io.popen(
-		"curl -s 'http://api.openweathermap.org/data/2.5/weather?q="
-			.. city
-			.. "&appid="
-			.. api_key
-			.. "&units=imperial'"
-	)
-	local result = handle:read("*a")
-	handle:close()
-
-	local weather_data = vim.fn.json_decode(result)
-	if weather_data and weather_data.main and weather_data.main.temp then
-		return " " .. city .. ": " .. weather_data.main.temp .. "°F"
-	else
-		return "Unable to fetch weather"
-	end
-end
 
 local function get_battery_macos()
 	local handle = io.popen("pmset -g batt")

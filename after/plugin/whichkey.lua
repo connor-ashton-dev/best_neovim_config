@@ -93,7 +93,7 @@ local mappings = {
 	["w"] = { ":w<CR>", "Save" },
 	["q"] = { ":conf q<CR>", "Close File" },
 	["L"] = { ":conf qa<CR>", "Leave" },
-	["K"] = { ":xa!<CR>", "Save and quit" },
+	["K"] = { ":wqa<CR>", "Save and quit" },
 	["u"] = { ":UndotreeToggle<CR>", "UndoTree" },
 	["r"] = {
 		":YabsDefaultTask<CR>",
